@@ -1,11 +1,10 @@
-### Logistic Regression Neural Network
-### The file contains the funtions to classify pictures
-### numpy is required
-
+# The code below is only designed for a sigmoid function model.
+# Package imports
 import numpy as np
 
 %matplotlib inline
 
+# Define the Sigmoid function
 def sigmoid(z):
     """
     Compute the sigmoid of z
@@ -23,6 +22,7 @@ def sigmoid(z):
 
     return s
 
+# Define the function that initializes the parameters
 def initialize_with_zeros(dim):
     """
     This function creates a vector of zeros of shape (dim, 1) for w and initializes b to 0.
@@ -45,6 +45,7 @@ def initialize_with_zeros(dim):
 
     return w, b
 
+# Define the function that performs the forward and backward propagation
 def propagate(w, b, X, Y):
     """
     Implement the cost function and its gradient for the propagation explained above
@@ -90,6 +91,7 @@ def propagate(w, b, X, Y):
 
     return grads, cost
 
+# Define the function that performs gradient descent
 def optimize(w, b, X, Y, num_iterations, learning_rate, print_cost = False):
     """
     This function optimizes w and b by running a gradient descent algorithm
@@ -150,7 +152,7 @@ def optimize(w, b, X, Y, num_iterations, learning_rate, print_cost = False):
 
     return params, grads, costs
 
-
+# Defiine the function that performs prediction
 def predict(w, b, X):
     '''
     Predict whether the label is 0 or 1 using learned logistic regression parameters (w, b)
@@ -187,8 +189,6 @@ def predict(w, b, X):
 
 def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate = 0.5, print_cost = False):
     """
-    Builds the logistic regression model by calling the function you've implemented previously
-
     Arguments:
     X_train -- training set represented by a numpy array of shape (num_px * num_px * 3, m_train)
     Y_train -- training labels represented by a numpy array (vector) of shape (1, m_train)
@@ -217,7 +217,6 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate
     # Predict test/train set examples (≈ 2 lines of code)
     Y_prediction_test = predict(w, b, X_test)
     Y_prediction_train = predict(w, b, X_train)
-
     ### END CODE HERE ###
 
     # Print train/test Errors

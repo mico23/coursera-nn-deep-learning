@@ -3,8 +3,6 @@
 # Package imports
 import numpy as np
 
-%matplotlib inlin
-
 # Define the Sigmoid function
 def sigmoid(z):
     """
